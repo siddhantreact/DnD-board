@@ -1,0 +1,14 @@
+.sidebar_container h5 {
+
+    border: 1px solid gray;
+    width: 14rem;
+    height: 3rem;
+    background-color: lightblue;
+}
+
+.sidebar_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

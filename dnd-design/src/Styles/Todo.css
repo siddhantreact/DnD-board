@@ -1,0 +1,46 @@
+/* .todo_container h4{
+
+
+} */
+
+
+.todo{
+    border: 1px solid gray;
+    width: auto;
+    height: 3rem;
+    background-color: aliceblue;
+}
+
+.input_todo{
+
+    width: 21rem;
+    height: 3rem;
+    /* border: none;
+    outline: none; */
+}
+
+::placeholder{
+
+
+    color: lightgray;
+    font-size: 1.5rem;
+}
+
+
+
+@media (max-width:760px) {
+    
+
+    .input_todo{
+
+        max-width: 10rem;
+    }
+
+
+}
+
+
+.select_input{
+
+    width: 10rem;
+}

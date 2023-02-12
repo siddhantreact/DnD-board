@@ -1,0 +1,50 @@
+
+.grid{
+    display: grid;
+    
+}
+
+
+.grid_three_column{
+
+    
+    grid-template-columns: repeat(3,1fr);
+}
+
+.task_container>div{
+
+    border: 1px solid gray;
+    height: 100vh;
+}
+
+.progress{
+
+    border: 1px solid gray;
+    width: auto;
+    height: 3rem;
+    background-color: lightcoral; 
+}
+
+
+.complete{
+
+    border: 1px solid gray;
+    width: auto;
+    height: 3rem;
+    background-color: lightseagreen; 
+}
+
+
+
+
+@media (max-width:760px) {
+    
+
+    .progress,.complete{
+
+        max-width: 24.4rem;
+      
+    }
+
+
+}
