@@ -39,9 +39,9 @@ function TaskBar() {
 
 
 
-    const selectedPriority = useSelector((state)=>{
+    const selectedPriority = useSelector((state) => {
 
-       return state.assignee.priority
+        return state.assignee.priority
 
     })
 
@@ -59,39 +59,38 @@ function TaskBar() {
         })
 
 
-        
-            if(selectedPriority[selectedPriority.length-1]=="low"){
 
-       
-             //low to high
+        if (selectedPriority[selectedPriority.length - 1] == "low") {
 
-            setProgressFil( progressDataRef.map((e)=>e).sort((a,b)=> (a.pty<b.pty)?1:-1))
-          
 
-           }
+            //low to high
 
-           else if(selectedPriority[selectedPriority.length-1]=="high")
-           {
+            setProgressFil(progressDataRef.map((e) => e).sort((a, b) => (a.pty < b.pty) ? 1 : -1))
+
+
+        }
+
+        else if (selectedPriority[selectedPriority.length - 1] == "high") {
 
             //high to low
-            setProgressFil( progressDataRef.map((e)=>e).sort((a,b)=> (a.pty<b.pty)?-1:1))
+            setProgressFil(progressDataRef.map((e) => e).sort((a, b) => (a.pty < b.pty) ? -1 : 1))
 
-           }
+        }
 
-           else{
+        else {
 
             setProgressFil(progressDataRef)
-           }
-
-         
-          
-           
-    //    setProgressFil(progressDataRef)
-        
+        }
 
 
 
-    }, [clickedNamesData, itemsInProgress ,selectedPriority])
+
+        //    setProgressFil(progressDataRef)
+
+
+
+
+    }, [clickedNamesData, itemsInProgress, selectedPriority])
 
 
 
@@ -107,31 +106,31 @@ function TaskBar() {
 
 
 
-   
-            
-          
 
 
-            if(selectedPriority[selectedPriority.length-1]=="low"){
 
-       
-               
-                setCompleteFil(completeDataRef.map((e)=>e).sort((a,b)=> (a.pty<b.pty)?1:-1))
-               
-              
-    
-              }
 
-              else if(selectedPriority[selectedPriority.length-1]=="high"){
 
-                setCompleteFil(completeDataRef.map((e)=>e).sort((a,b)=> (a.pty<b.pty)?-1:1))
-              }
+        if (selectedPriority[selectedPriority.length - 1] == "low") {
 
-              else{
-                setCompleteFil(completeDataRef)
-    
-              }
-              
+
+
+            setCompleteFil(completeDataRef.map((e) => e).sort((a, b) => (a.pty < b.pty) ? 1 : -1))
+
+
+
+        }
+
+        else if (selectedPriority[selectedPriority.length - 1] == "high") {
+
+            setCompleteFil(completeDataRef.map((e) => e).sort((a, b) => (a.pty < b.pty) ? -1 : 1))
+        }
+
+        else {
+            setCompleteFil(completeDataRef)
+
+        }
+
 
 
 
@@ -139,7 +138,7 @@ function TaskBar() {
 
         //   setCompleteFil(completeDataRef)
 
-    }, [clickedNamesData, itemsInComplete,selectedPriority])
+    }, [clickedNamesData, itemsInComplete, selectedPriority])
 
 
 
@@ -238,7 +237,7 @@ function TaskBar() {
                     progressFil?.map((e) => {
 
                         return (
-                            <>
+                            <div className='task_details_container'>
                                 <h4 className='progress' draggable onDragStart={(event) => {
 
                                     console.log("dragging start from progress")
@@ -249,10 +248,12 @@ function TaskBar() {
                                     event.dataTransfer.setData("dataFromProgressTask", e.task)
                                     event.dataTransfer.setData("dataFromProgressPriority", e.pty)
 
-                                }} >task: {e.task}</h4>
+                                }} > {e.task}</h4>
 
-                                <h4>priority: {e.pty}</h4>
-                            </>
+                                
+                                    <h6>priority:{e.pty}</h6>
+                               
+                            </div>
                         )
 
                     })
@@ -286,7 +287,7 @@ function TaskBar() {
 
                     name: e.dataTransfer.getData("dataFromProgressName"),
                     task: e.dataTransfer.getData("dataFromProgressTask"),
-                     pty: e.dataTransfer.getData("dataFromProgressPriority")
+                    pty: e.dataTransfer.getData("dataFromProgressPriority")
 
                 }))
 
@@ -300,8 +301,7 @@ function TaskBar() {
             }}>
 
                 <h2 >COMPLETE</h2>
-                {/* 
-     !!!!apply filters */}
+   
 
                 {
 
@@ -311,23 +311,23 @@ function TaskBar() {
 
                         return (
 
-                            <>
-                            <h4 className='complete' draggable onDragStart={(event) => {
+                            <div className='complete_container'>
+
+                                <h4 className='complete' draggable onDragStart={(event) => {
 
 
-                                //  event.dataTransfer.setData("rev" , e)
+                                    //  event.dataTransfer.setData("rev" , e)
 
-                                event.dataTransfer.setData("revName", e.name)
-                                event.dataTransfer.setData("revTask", e.task)
-                                event.dataTransfer.setData("revPty", e.pty)
+                                    event.dataTransfer.setData("revName", e.name)
+                                    event.dataTransfer.setData("revTask", e.task)
+                                    event.dataTransfer.setData("revPty", e.pty)
 
-                            }}>{e.task}</h4>
+                                }}>{e.task}</h4>
 
-                                  
+                               
+                                <h6>priority:{e.pty}</h6>
 
-                             <h4>priority:{e.pty}</h4>  
-
-                             </>   
+                            </div>
                         )
                     })
                 }

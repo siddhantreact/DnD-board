@@ -17,13 +17,53 @@
     height: 100vh;
 }
 
-.progress{
+/* .progress{
 
     border: 1px solid gray;
     width: auto;
     height: 3rem;
     background-color: lightcoral; 
+} */
+
+
+.task_details_container{
+
+    background-color: coral;
+    display: flex;
+   
+    flex-direction: column;
+    justify-content:flex-start ;
+   position: relative;
+     margin: 1rem;
+
+
+
 }
+
+.task_details_container h6{
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.complete_container{
+
+    background-color: lightcyan;
+    display: flex;
+   
+    flex-direction: column;
+    justify-content:flex-start ;
+   position: relative;
+     margin: 1rem;
+}
+
+.complete_container h6{
+    position: absolute;
+    right: 0;
+  
+}
+
 
 
 .complete{

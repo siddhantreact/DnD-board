@@ -4,6 +4,12 @@
     width: 14rem;
     height: 3rem;
     background-color: lightblue;
+    width: 5rem;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
 }
 
 .sidebar_container{
@@ -11,4 +17,5 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
 }

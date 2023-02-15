@@ -25,7 +25,7 @@ function Todo() {
 
     const [tickects, setTickects] = useState()
 
-  
+
 
 
 
@@ -76,8 +76,7 @@ function Todo() {
     }, [taskDetails, clickedNamesData])
 
 
-    //condition
-    //current user
+
 
 
 
@@ -110,7 +109,7 @@ function Todo() {
 
                             name: clickedNamesData[clickedNamesData.length - 1],
                             task: tickects,
-                         
+
 
                         }))
                     }}>
@@ -119,12 +118,12 @@ function Todo() {
 
                     </IconButton>
 
-{/* //!!! */}
 
 
 
 
-                    {/* !!!!!!!!! filter*/}
+
+
 
 
 
@@ -139,69 +138,72 @@ function Todo() {
                         data?.map((e) => {
 
                             return (
-                                <>
-                                    <h4 className='todo' draggable onDragStart={(event) => {
+                                <div className='child_container' draggable onDragStart={(event) => {
 
-                                        console.log("dragging start")
+                                    console.log("dragging start")
 
-                                        //   event.dataTransfer.setData("dataFromTodo" , e?.task)
+                                    //   event.dataTransfer.setData("dataFromTodo" , e?.task)
 
-                                        event.dataTransfer.setData("dataFromTodoName",
+                                    event.dataTransfer.setData("dataFromTodoName",
 
-                                            e.name
-
-
-                                        )
-
-                                        event.dataTransfer.setData("dataFromTodoTask",
+                                        e.name
 
 
-                                            e.task
+                                    )
 
-                                        )
-
-                                        event.dataTransfer.setData("dataFromTodoPriority",
+                                    event.dataTransfer.setData("dataFromTodoTask",
 
 
-                                            e.pty
+                                        e.task
 
-                                        )
+                                    )
 
-
-
-                                    }}    >{e?.task}</h4>
-
-                                    <Delete onClick={() => {
+                                    event.dataTransfer.setData("dataFromTodoPriority",
 
 
-                                        dispatch(deleteFromTodo(e.task))
+                                        e.pty
 
-                                    }} />
-
-                                    <select className='select_input' ref={input} onClick={() => {
+                                    )
 
 
-                                        console.log(input.current.value)
-                                      
-                                        
 
-                                        dispatch(updateTickectWithPriority({
-                                             name:e.name,
-                                             task:e.task,
-                                             pty:input.current.value
+                                }} >
 
-                                        }))
-
-                                    }}>
-
-                                        <option value={"1"}>1</option>
-                                        <option value={"2"}>2</option>
-                                        <option value={"3"}>3</option>
-
-                                    </select>
+                                    <h4 className='todo' draggable    >{e?.task}</h4>
 
 
-                                </>
+                                    <div className='options_container'>
+                                        <Delete onClick={() => {
+
+
+                                            dispatch(deleteFromTodo(e.task))
+
+                                        }} />
+
+                                        <select className='select_input' ref={input} onClick={() => {
+
+
+                                            console.log(input.current.value)
+
+
+
+                                            dispatch(updateTickectWithPriority({
+                                                name: e.name,
+                                                task: e.task,
+                                                pty: input.current.value
+
+                                            }))
+
+                                        }}>
+
+                                            <option value={"1"}>1</option>
+                                            <option value={"2"}>2</option>
+                                            <option value={"3"}>3</option>
+
+                                        </select>
+                                    </div>
+
+                                </div>
                             )
                         })
 

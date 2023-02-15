@@ -4,17 +4,42 @@
 } */
 
 
-.todo{
+/* .todo{
     border: 1px solid gray;
     width: auto;
     height: 3rem;
     background-color: aliceblue;
+} */
+
+
+
+
+.child_container{
+ 
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    border: 1px solid gray;
+    margin: 1rem;
+   
+
 }
+
+.options_container{
+
+   display: flex;
+   justify-content: flex-end;
+   padding: 1.5rem;
+   gap: 1rem;
+
+}
+
 
 .input_todo{
 
     width: 21rem;
     height: 3rem;
+    margin: 1rem;
     /* border: none;
     outline: none; */
 }
@@ -42,5 +67,5 @@
 
 .select_input{
 
-    width: 10rem;
+    width: 1.5rem;
 }
