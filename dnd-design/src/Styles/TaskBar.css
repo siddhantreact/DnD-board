@@ -49,30 +49,32 @@
 
 .complete_container{
 
-    background-color: lightcyan;
+  
     display: flex;
    
     flex-direction: column;
     justify-content:flex-start ;
    position: relative;
      margin: 1rem;
+     background-color: lightgray;
 }
 
 .complete_container h6{
     position: absolute;
     right: 0;
+    bottom: 0;
   
 }
 
 
 
-.complete{
+/* .complete{
 
     border: 1px solid gray;
     width: auto;
     height: 3rem;
     background-color: lightseagreen; 
-}
+} */
 
 
 
